@@ -9,6 +9,10 @@ namespace Server.Misc
         {
             ' ', '-', '.', '\''
         };
+        public static readonly char[] PolishDiacritics = new char[]
+        {
+            'ą', 'ę', 'ć', 'ł', 'ń', 'ó', 'ś', 'ź', 'ż'
+        };
         public static readonly char[] Empty = new char[0];
         private static readonly string[] m_StartDisallowed = new string[]
         {
@@ -146,7 +150,7 @@ namespace Server.Misc
                 {
                     char c = name[i];
 
-                    if (c >= 'a' && c <= 'z')
+                    if (c >= 'a' && c <= 'z' || Array.IndexOf(PolishDiacritics, c))
                     {
                         if (!allowLetters)
                             return false;
