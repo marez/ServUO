@@ -150,7 +150,7 @@ namespace Server.Misc
                 {
                     char c = name[i];
 
-                    if (c >= 'a' && c <= 'z' || Array.IndexOf(PolishDiacritics, c))
+                    if ((c >= 'a' && c <= 'z') || Array.IndexOf(PolishDiacritics, c) !== -1)
                     {
                         if (!allowLetters)
                             return false;
